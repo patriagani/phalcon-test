@@ -8,6 +8,8 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
+use MongoDB\Client;
+
 
 /**
  * Shared configuration service
@@ -115,11 +117,11 @@ $di->setShared('session', function () {
 /**
  * Register router
  */
-$di->setShared('router', function () {
-    $router = new Router();
-    $router->setUriSource(
-        Router::URI_SOURCE_SERVER_REQUEST_URI
-    );
+// $di->setShared('router', function () {
+//     $router = new Router();
+//     $router->setUriSource(
+//         Router::URI_SOURCE_SERVER_REQUEST_URI
+//     );
 
-    return $router;
-});
+//     return $router;
+// });
